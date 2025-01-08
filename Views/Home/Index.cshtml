@@ -1,0 +1,27 @@
+﻿@model IEnumerable<OzelGunler.Models.SpecialDays>
+
+@{
+    ViewData["Title"] = "Özel Günler";
+}
+
+<h2>İşte <span style="color: #ff4500; font-size: 60px;">@ViewBag.AyAdı</span> Ayının Özel Günleri</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Ad</th>
+            <th>Tarih</th>
+            <th>Açıklama</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var gun in Model)
+        {
+            <tr>
+                <td>@gun.Ad</td>
+                <td>@gun.Tarih.ToString("dd MMMM yyyy")</td> <!-- Tarihi istediğiniz formatta gösterebilirsiniz -->
+                <td>@gun.Aciklama</td>
+            </tr>
+        }
+    </tbody>
+</table>
